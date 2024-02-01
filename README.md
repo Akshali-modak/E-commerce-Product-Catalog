@@ -39,8 +39,20 @@
 ## update product by productId
 **To update a product,** send a PUT request to the `http://localhost:8081/{productId}` 
 **endpoint with the JSON** payload representing the updated product, replacing `{productId}` with the actual product ID.
-'''
+**Method:** `POST`
+**Request Body:** JSON representing the Products
+```json
+{
+    "id": 203,
+    "name": "apple laptop",
+    "price": 3300.0,
+    "category": {
+        "id": 52,
+        "name": "SmartWatch"
+    }
+}
 ## Delete product
 **Endpoint:** `http://localhost:8081//remove/{productId}`
 **Method:** `DELETE`
-**Usage:** To delete a product, send a DELETE request to the `http://localhost:8081//remove/{productId}` endpoint, replacing `{productId}` with the actual product ID.
+**Usage:** To delete a product, send a DELETE request to the `http://localhost:8081//remove/{productId}`
+** endpoint,** replacing `{productId}` with the actual product ID.
