@@ -36,7 +36,10 @@
 **Method:** `GET`
 **Usage:** To retrieve a product by category_id, send a GET request to the `http://localhost:8081/byCategory{categoryId}'
 ```
-**Usage:** To update a product, send a PUT request to the `http://localhost:8081/{productId}` endpoint with the JSON payload representing the updated product, replacing `{productId}` with the actual product ID.
+## update product by productId
+**To update a product,** send a PUT request to the `http://localhost:8081/{productId}` 
+**endpoint with the JSON** payload representing the updated product, replacing `{productId}` with the actual product ID.
+'''
 ## Delete product
 **Endpoint:** `http://localhost:8081//remove/{productId}`
 **Method:** `DELETE`
