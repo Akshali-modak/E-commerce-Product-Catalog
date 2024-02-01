@@ -17,14 +17,13 @@ import java.util.List;
 @Builder
 public class Category {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private String name;
 
-
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Product> products;
 
-    // Constructors, getters, setters, etc.
 }

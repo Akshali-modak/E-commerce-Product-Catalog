@@ -13,18 +13,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@JsonIgnoreProperties({"category"})
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
     private String name;
     private double price;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
-
-    // Constructors, getters, setters, etc.
 }
