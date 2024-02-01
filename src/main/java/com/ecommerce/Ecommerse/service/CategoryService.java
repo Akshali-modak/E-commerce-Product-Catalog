@@ -10,13 +10,18 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    public Category saveCategory(Category category) {
-        return categoryRepository.save(category);
+    public String saveCategory(Category category) {
+         categoryRepository.save(category);
+         return "Category inserted Successfully";
     }
 
-    public Category getCategoryById(Long categoryId) {
+    public Category getCategoryById(Long categoryId)
+    {
         return categoryRepository.findById(categoryId).orElse(null);
     }
 
-    // Other business logic as needed
+    public void deleteCategory(Long categoryId) {
+        categoryRepository.deleteById(categoryId);
+    }
+
 }

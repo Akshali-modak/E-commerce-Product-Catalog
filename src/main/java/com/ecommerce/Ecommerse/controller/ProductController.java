@@ -15,23 +15,26 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping("/byCategory/{categoryId}")
-    public List<Product> getProductsByCategory(@PathVariable Long categoryId) {
-        // Retrieve Category by Id (you may want to add error handling if not found)
-
-
-        // Get products for the specified category
-        return productService.getProductsByCategory(categoryId);
-    }
-
     @PostMapping("/add")
     public Product addProduct(@RequestBody Product product) {
         return productService.saveProduct(product);
     }
 
+    @GetMapping("/byCategory/{categoryId}")
+    public List<Product> getProductsByCategory(@PathVariable Long categoryId) {
+        // Retrieve Category by Id (you may want to add error handling if not found)
+        return productService.getProductsByCategory(categoryId);
+    }
+
+
     @DeleteMapping("/remove/{productId}")
-    public void removeProduct(@PathVariable Long productId) {
-        productService.deleteProduct(productId);
+    public String removeProduct(@PathVariable Long productId) {
+       return productService.deleteProduct(productId);
+    }
+
+    @PutMapping("/{productId}")
+    public Product updateProduct(@RequestBody Product product , @PathVariable Long productId){
+       return productService.updateProduct(product, productId);
     }
 
 }
