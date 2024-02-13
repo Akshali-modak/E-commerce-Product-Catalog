@@ -23,11 +23,11 @@ public class ProductService {
         return productRepository.save(product);
     }
 
+
     public String deleteProduct(Long id) {
         productRepository.deleteById(id);
         return "Product deleted successfully";
     }
-
 
     public Product updateProduct(Product product , Long productId ) {
         Product existingProduct = productRepository.findById(productId).orElse(null);

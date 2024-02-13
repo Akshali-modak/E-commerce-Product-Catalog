@@ -26,7 +26,6 @@ public class ProductController {
         return productService.getProductsByCategory(categoryId);
     }
 
-
     @DeleteMapping("/remove/{productId}")
     public String removeProduct(@PathVariable Long productId) {
        return productService.deleteProduct(productId);
